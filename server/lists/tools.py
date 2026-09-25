@@ -1,8 +1,7 @@
 """Lists tools for the Trakt MCP server."""
 
-import logging
 from collections.abc import Awaitable, Callable
-from typing import Annotated, Final, Literal, TypeAlias
+from typing import Annotated, Literal, TypeAlias
 
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field
@@ -22,8 +21,6 @@ from server.base import LimitOnly, ToolErrors
 from utils.api.errors import handle_api_errors_func
 from utils.api.request_context import set_tool_context
 from utils.validators import StrippedStr
-
-logger: Final = logging.getLogger("trakt_mcp")
 
 # Type alias for tool handlers
 ToolHandler: TypeAlias = Callable[..., Awaitable[str]]

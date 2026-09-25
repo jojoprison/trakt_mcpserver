@@ -183,8 +183,7 @@ def format_list_summary(
 
 
 def format_list_items_media(
-    items: Sequence[ListMediaItemResponse]
-    | PaginatedResponse[ListMediaItemResponse],
+    items: Sequence[ListMediaItemResponse] | PaginatedResponse[ListMediaItemResponse],
     context: str,
 ) -> str:
     """Format the media items contained in a user's list.

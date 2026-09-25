@@ -28,7 +28,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: None = None,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> list[ListMediaItemResponse]: ...
+    ) -> list[ListMediaItemResponse]:
+        """Auto-paginate and return up to ``limit`` list items."""
 
     @overload
     async def get_list_items(
@@ -39,7 +40,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: int = ...,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> PaginatedResponse[ListMediaItemResponse]: ...
+    ) -> PaginatedResponse[ListMediaItemResponse]:
+        """Return a single page of list items with pagination metadata."""
 
     @handle_api_errors
     async def get_list_items(
@@ -105,7 +107,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: None = None,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> list[TrendingListResponse]: ...
+    ) -> list[TrendingListResponse]:
+        """Auto-paginate and return up to ``limit`` trending lists."""
 
     @overload
     async def get_trending_lists(
@@ -113,7 +116,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: int = ...,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> PaginatedResponse[TrendingListResponse]: ...
+    ) -> PaginatedResponse[TrendingListResponse]:
+        """Return a single page of trending lists with pagination metadata."""
 
     @handle_api_errors
     async def get_trending_lists(
@@ -141,7 +145,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: None = None,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> list[TrendingListResponse]: ...
+    ) -> list[TrendingListResponse]:
+        """Auto-paginate and return up to ``limit`` popular lists."""
 
     @overload
     async def get_popular_lists(
@@ -149,7 +154,8 @@ class ListsClient(BaseClient):
         limit: int = DEFAULT_LIMIT,
         page: int = ...,
         max_pages: int = DEFAULT_MAX_PAGES,
-    ) -> PaginatedResponse[TrendingListResponse]: ...
+    ) -> PaginatedResponse[TrendingListResponse]:
+        """Return a single page of popular lists with pagination metadata."""
 
     @handle_api_errors
     async def get_popular_lists(
